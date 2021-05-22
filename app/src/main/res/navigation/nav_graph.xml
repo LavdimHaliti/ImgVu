@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/imgSearchFragment">
+    <fragment
+        android:id="@+id/imgSearchFragment"
+        android:name="com.example.imgvu.fragments.ImgSearchFragment"
+        android:label="ImgSearchFragment" >
+        <action
+            android:id="@+id/action_imgSearchFragment_to_detailImgFragment"
+            app:destination="@id/detailImgFragment" />
+        <action
+            android:id="@+id/action_imgSearchFragment_to_favoriteImgFragment"
+            app:destination="@id/favoriteImgFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailImgFragment"
+        android:name="com.example.imgvu.fragments.DetailImgFragment"
+        android:label="DetailImgFragment" >
+        <argument
+            android:name="photo"
+            app:argType="com.example.imgvu.data.ImageDetail" />
+        <action
+            android:id="@+id/action_detailImgFragment_to_favoriteImgFragment"
+            app:destination="@id/favoriteImgFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteImgFragment"
+        android:name="com.example.imgvu.fragments.FavoriteImgFragment"
+        android:label="FavoriteImgFragment" >
+        <action
+            android:id="@+id/action_favoriteImgFragment_to_detailImgFragment"
+            app:destination="@id/detailImgFragment" />
+    </fragment>
+</navigation>
